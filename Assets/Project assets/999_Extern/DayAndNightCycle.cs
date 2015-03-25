@@ -16,7 +16,7 @@ public class DayAndNightCycle : MonoBehaviour
 	{
 		GameObject lightGameObject = new GameObject("Light_Time"); // light creation
 		lightGameObject.AddComponent<Light> ();
-		lightGameObject.light.color = Color.yellow;
+		lightGameObject.GetComponent<Light>().color = Color.yellow;
 
 		timerDayAndNight = 0; // timer that increments over time set up to 0
 		dayTime = 300; // X frames before day
@@ -32,7 +32,7 @@ public class DayAndNightCycle : MonoBehaviour
 
 		if (day == true && night == false && timerDayAndNight >= nightTime) // if it's day time and timer reaches time before 
 		{
-			lightGameObject.light.color = Color.blue;
+			lightGameObject.GetComponent<Light>().color = Color.blue;
 			timerDayAndNight = 0; // reset timer
 			day = false; // day is false
 			night = true; // night becomes true
@@ -40,7 +40,7 @@ public class DayAndNightCycle : MonoBehaviour
 
 		if (night == true && timerDayAndNight >= nightTime) // if it's night time and timer reaches time before night
 		{
-			lightGameObject.light.color = Color.yellow;
+			lightGameObject.GetComponent<Light>().color = Color.yellow;
 			timerDayAndNight = 0; // reset timer
 			day = true;  // day becomes true
 			night = false; // night is false

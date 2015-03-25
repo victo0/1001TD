@@ -111,14 +111,14 @@ public class Player : MonoBehaviour {
 		
 		//Determine the screen coordinates for the corners of the selection bounds
 		List< Vector3 > corners = new List< Vector3 >();
-		corners.Add(Camera.mainCamera.WorldToScreenPoint(new Vector3(cx+ex,cy+ey,cz+ez)));
-		corners.Add(Camera.mainCamera.WorldToScreenPoint(new Vector3(cx+ex,cy+ey,cz-ez)));
-		corners.Add(Camera.mainCamera.WorldToScreenPoint(new Vector3(cx+ex,cy-ey,cz+ez)));
-		corners.Add(Camera.mainCamera.WorldToScreenPoint(new Vector3(cx-ex,cy+ey,cz+ez)));
-		corners.Add(Camera.mainCamera.WorldToScreenPoint(new Vector3(cx+ex,cy-ey,cz-ez)));
-		corners.Add(Camera.mainCamera.WorldToScreenPoint(new Vector3(cx-ex,cy-ey,cz+ez)));
-		corners.Add(Camera.mainCamera.WorldToScreenPoint(new Vector3(cx-ex,cy+ey,cz-ez)));
-		corners.Add(Camera.mainCamera.WorldToScreenPoint(new Vector3(cx-ex,cy-ey,cz-ez)));
+		corners.Add(Camera.main.WorldToScreenPoint(new Vector3(cx+ex,cy+ey,cz+ez)));
+		corners.Add(Camera.main.WorldToScreenPoint(new Vector3(cx+ex,cy+ey,cz-ez)));
+		corners.Add(Camera.main.WorldToScreenPoint(new Vector3(cx+ex,cy-ey,cz+ez)));
+		corners.Add(Camera.main.WorldToScreenPoint(new Vector3(cx-ex,cy+ey,cz+ez)));
+		corners.Add(Camera.main.WorldToScreenPoint(new Vector3(cx+ex,cy-ey,cz-ez)));
+		corners.Add(Camera.main.WorldToScreenPoint(new Vector3(cx-ex,cy-ey,cz+ez)));
+		corners.Add(Camera.main.WorldToScreenPoint(new Vector3(cx-ex,cy+ey,cz-ez)));
+		corners.Add(Camera.main.WorldToScreenPoint(new Vector3(cx-ex,cy-ey,cz-ez)));
 		
 		foreach(Vector3 corner in corners) {
 			GameObject hitObject = WorkManager.FindHitObject(corner);

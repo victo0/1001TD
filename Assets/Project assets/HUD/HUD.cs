@@ -132,9 +132,9 @@ public class HUD : MonoBehaviour {
 	private void DrawMouseCursor() { // Dessine les curseurs personnalisés.
 		bool mouseOverHud = !MouseInBounds() && activeCursorState != CursorState.PanRight && activeCursorState != CursorState.PanUp;
 		if(mouseOverHud) {
-			Screen.showCursor = true;
+			Cursor.visible = true;
 		} else {
-			Screen.showCursor = false;
+			Cursor.visible = false;
 			if (!player.IsFindingBuildingLocation()) {
 				GUI.skin = mouseCursorSkin;
 				GUI.BeginGroup(new Rect(0,0,Screen.width,Screen.height));
