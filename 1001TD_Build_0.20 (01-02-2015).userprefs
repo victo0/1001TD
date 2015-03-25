@@ -1,0 +1,25 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Project assets\WorldObject\Units\Unit.cs">
+    <Files>
+      <File FileName="Assets\Project assets\WorldObject\Units\Unit.cs" Line="20" Column="3" />
+      <File FileName="Assets\Project assets\WorldObject\WorldObject.cs" Line="260" Column="20" />
+      <File FileName="Assets\Project assets\WorldObject\Units\OurUnits\Soldier\Soldier.cs" Line="14" Column="17" />
+      <File FileName="Assets\Project assets\WorldObject\Building\Tower\Tower.cs" Line="1" Column="1" />
+      <File FileName="Assets\Project assets\WorldObject\Building\Building.cs" Line="36" Column="30" />
+      <File FileName="Assets\Project assets\WorldObject\Building\Castle\Castle.cs" Line="24" Column="16" />
+      <File FileName="Assets\Project assets\TD\ResourceManager.cs" Line="44" Column="43" />
+      <File FileName="Assets\Project assets\TD\WorkManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Project assets\Player\UserInput.cs" Line="110" Column="68" />
+      <File FileName="Assets\Project assets\Player\Player.cs" Line="123" Column="72" />
+      <File FileName="Assets\Project assets\Resources\GameObjectList.cs" Line="20" Column="10" />
+      <File FileName="Assets\Project assets\WorldObject\ActionObjects\ActionsObjects.cs" Line="5" Column="21" />
+      <File FileName="Assets\Project assets\WorldObject\ActionObjects\ActionsObjectsList.cs" Line="6" Column="1" />
+      <File FileName="Assets\Project assets\HUD\HUD.cs" Line="39" Column="53" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

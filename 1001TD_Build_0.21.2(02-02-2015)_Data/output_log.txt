@@ -1,0 +1,38 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 570 (ID=0x1081)
+    Vendor:   NVIDIA
+    VRAM:     1232 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.051 seconds
+desktop: 1680x1050 59Hz; virtual: 1680x1050 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\sig3gd\Dropbox\1001TD_Build_0.20 (01-02-2015)\1001TD_Build_0.21.2(02-02-2015)_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 5.071462 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 200.
+Total: 1.845238 ms (FindLiveObjects: 0.014489 ms CreateObjectMapping: 0.012677 ms MarkObjects: 0.175679 ms  DeleteObjects: 0.006037 ms)
+
+UnloadTime: 0.550885 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 209.
+Total: 1.903194 ms (FindLiveObjects: 0.013281 ms CreateObjectMapping: 0.012979 ms MarkObjects: 0.204657 ms  DeleteObjects: 0.004829 ms)
+

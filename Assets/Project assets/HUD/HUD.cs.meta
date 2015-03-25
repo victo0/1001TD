@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 48c135ee491f30c40b34d71a5618ef8f
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - resourceSkin: {fileID: 11400000, guid: 16a2cb8e4c6b2b041a3c9ed47355f298, type: 2}
+  - ordersSkin: {fileID: 11400000, guid: b89dedde8fad77e4fbb44a338fa384b7, type: 2}
+  - selectBoxSkin: {fileID: 11400000, guid: 1daf3157cb289a8408cce4c9e13a6d45, type: 2}
+  - mouseCursorSkin: {fileID: 11400000, guid: a08fb831e81459349978e4dc44922e3a, type: 2}
+  - activeCursor: {instanceID: 0}
+  - selectCursor: {fileID: 2800000, guid: 3ca0ed85eb9cee84099e6726511be908, type: 3}
+  - leftCursor: {fileID: 2800000, guid: 6217eaa0ee10190449b467624c6a3b9f, type: 3}
+  - rightCursor: {fileID: 2800000, guid: d312acee8736e8f4ba187141c137cbb7, type: 3}
+  - upCursor: {fileID: 2800000, guid: 8f1b0de16a018ed4b8da5bfbf088f690, type: 3}
+  - downCursor: {fileID: 2800000, guid: e217a64b8803d7246a7926f700dba678, type: 3}
+  - healthy: {instanceID: 0}
+  - damaged: {fileID: 2800000, guid: 67867e9835e2e3547bd194d2cafb0d2f, type: 3}
+  - critical: {fileID: 2800000, guid: e7a41bf59daab8e468b80f92a9fc6442, type: 3}
+  - buttonHover: {fileID: 2800000, guid: 245d0f9b0d8635f448e7d0b740ebe851, type: 3}
+  - buttonClick: {fileID: 2800000, guid: 5caf3d620840db941b7f8ff994d8d824, type: 3}
+  - buildFrame: {instanceID: 0}
+  - buildMask: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

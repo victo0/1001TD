@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: b7a499a1db0977644a19750429f64c2f
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - buildImage: {fileID: 2800000, guid: 6e90643b9438e6c42993d5cb53855860, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

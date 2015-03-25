@@ -1,0 +1,27 @@
+en cours de dev (victor) :
+
+- Gestion des vagues
+- victoire
+- Défaite
+
+
+
+
+build 0.32 :
+
+- Ajout d'une variable de cicle jour/nuit dans unit.
+- Les ennemis vont désormais vers le chateau.
+- Les ennemis font perdre des pv.
+- Réglage des vagues depuis l'éditeur unity. (le jeu ne sais pas encore les lancer).
+
+
+
+
+build 0.31 :
+
+- Correction de bugs divers.
+- Les projectiles sont maintenant autoguidés.
+- Les projectiles ont un timer d'autodestruction réglable.
+- Ajout du gain de ressources sur la mort des ennemis.
+
+

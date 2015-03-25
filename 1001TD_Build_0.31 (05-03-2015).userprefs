@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Project assets\WorldObject\Units\Ennemies\Spawner\Spawner.cs">
+    <Files>
+      <File FileName="Assets\Project assets\WorldObject\Units\Ennemies\Spawner\Spawner.cs" Line="8" Column="19" />
+      <File FileName="Assets\Project assets\WorldObject\Units\Unit.cs" Line="126" Column="1" />
+      <File FileName="Assets\Project assets\WorldObject\Units\Ennemies\EnnemiDestination.cs" Line="19" Column="1" />
+      <File FileName="Assets\Project assets\WorldObject\WorldObject.cs" Line="277" Column="1" />
+      <File FileName="Assets\Project assets\WorldObject\Units\Ennemies\EnnemiUnit.cs" Line="41" Column="1" />
+      <File FileName="Assets\Project assets\Player\Player.cs" Line="154" Column="1" />
+      <File FileName="Assets\Project assets\WorldObject\Projectiles\Projectile.cs" Line="70" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
