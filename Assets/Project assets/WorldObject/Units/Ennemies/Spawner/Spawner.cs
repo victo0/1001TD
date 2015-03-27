@@ -1,37 +1,62 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using TD;
 
-public class Spawner : MonoBehaviour {
+[System.Serializable]
 
-	public long [] waves;
-	private long digit;
-	private ArrayList digitList;
+public class Vagues
+{
+    public string name;
+    public List<Unit> ennemis;
+    
+}
 
-	
-	// Use this for initialization
-	private	void Start () {
-		
+public class Spawner : MonoBehaviour
+{
+
+    public List<Vagues> wavesList;
+    private bool onGoing;
+    private int activeWave;
+     Unit activeUnit;
+    
+    private void Start()
+    {
+        
+    }
+
+
+    private void Update() 
+    {
+        if (onGoing)
+        {
+            if (activeUnit = null)
+            {
+                waveSpawn();
+
+            }
+            else
+            {
+                onGoing = false;
+            }          
+        }	
 	}
-	
-	// Update is called once per frame
-	private void Update () {
-	
-	}
 
-	public void launchWave (int waveNumber) {
-	int realWaveNumber = waveNumber -1;	
-	long unitList = waves [realWaveNumber];
-	UnitList (unitList);
-	}
+    public void NextWave()
+    {
+        activeWave++;
+    }
 
-	private void UnitList (long wave) {
-		long res = wave;
-		while (res != 0) {
-			digit = res % 10;
-			res = res/10;
-			digitList.Add (digit);
-		}
-		digitList.Reverse ();
-	}
+    private void WaveSpawn()
+    {
+        foreach (Unit unit in wavesList) 
+        {
+            List<Unit> tempList = new List<Unit> ();
+            tempList = unitList;
+        }
+       
+        
+    }
+
 
 }
