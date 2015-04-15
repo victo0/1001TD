@@ -22,7 +22,6 @@ public class DayAndNightCycle : MonoBehaviour
 		dayTime = 300; // X frames before day
 		nightTime = 300; // X frames before night 
 		day = true; // game starts with day
-		night = false; // night can't be on during day time
 	}
 	
 	// Update is called once per frame
@@ -30,20 +29,18 @@ public class DayAndNightCycle : MonoBehaviour
 	{
 		timerDayAndNight++; // increment timer over time
 
-		if (day == true && night == false && timerDayAndNight >= nightTime) // if it's day time and timer reaches time before 
+		if (day == true && timerDayAndNight >= nightTime) // if it's day time and timer reaches time before 
 		{
 			lightGameObject.GetComponent<Light>().color = Color.blue;
 			timerDayAndNight = 0; // reset timer
 			day = false; // day is false
-			night = true; // night becomes true
 		}
 
-		if (night == true && timerDayAndNight >= nightTime) // if it's night time and timer reaches time before night
+		if (day == false && timerDayAndNight >= nightTime) // if it's night time and timer reaches time before night
 		{
 			lightGameObject.GetComponent<Light>().color = Color.yellow;
 			timerDayAndNight = 0; // reset timer
 			day = true;  // day becomes true
-			night = false; // night is false
 		}
 	}
 }

@@ -9,7 +9,6 @@ public class Syrenes : Unit {
 	protected Quaternion aimRotation;
 	
 	
-	da
 	protected override void Start () {
 		base.Start ();
 	}
@@ -55,14 +54,12 @@ public class Syrenes : Unit {
 	//Function du changement jour/nuit
 	//D'apres Keumar, le code peut etre simplifié en utilisant une seule variable booléenne qui agit comme un toggle jour/nuit.
 
-	public override void DayNightToggle () {
-		if ((DayAndNightCycle.night == true) && (DayAndNightCycle.day == false)) {
-			DayAndNightCycle.day;
-			DayAndNightCycle.night;
+	public void DayNightToggle () {
+		if (this.dayNightCycle == true) {
+			DayAndNightCycle.day = false;
 		}
-		if ((DayAndNightCycle.day == true) && (DayAndNightCycle.night == false)) {
-			DayAndNightCycle.night;
-			DayAndNightCycle.day;
+		if (this.dayNightCycle == false) {
+			DayAndNightCycle.day = true;
 
 		}
 	}
