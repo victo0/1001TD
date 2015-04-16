@@ -52,10 +52,8 @@ public class WorldObject : MonoBehaviour {
 		if(ShouldMakeDecision()) DecideWhatToDo();
 		CalculateBounds();
 		if (target == null) {
-			
+			attacking = false;
 		}
-
-
 	}
 	protected virtual void OnGUI () {
 		if (currentlySelected)DrawSelection ();
@@ -102,14 +100,15 @@ public class WorldObject : MonoBehaviour {
 		GUI.BeginGroup (playingArea);
 		DrawSelectionBox (selectBox);
 		GUI.EndGroup ();
-
 	}
+
 	public void CalculateBounds() {
 		selectionBounds = new Bounds (transform.position, Vector3.zero);
 		foreach(Renderer r in GetComponentsInChildren < Renderer > ()) {
 			selectionBounds.Encapsulate (r.bounds);
 		}
 	}
+
 	public virtual void SetHoverState(GameObject hoverObject) {
 		//only handle input if owned by a human player and currently selected
 		if(player && player.human && currentlySelected) {
@@ -127,6 +126,7 @@ public class WorldObject : MonoBehaviour {
 			}
 		}
 	}
+
 	public bool IsOwnedBy(Player owner) {
 		if(player && player.Equals(owner)) {
 			return true;
@@ -134,9 +134,11 @@ public class WorldObject : MonoBehaviour {
 			return false;
 		}
 	}
+
 	public Player GetPlayer() {
 		return player;
 	}
+
 	protected virtual void DrawSelectionBox(Rect selectBox) {
 		GUI.Box(selectBox, "");
 		CalculateCurrentHealth(0.35f, 0.65f);
@@ -155,6 +157,7 @@ public class WorldObject : MonoBehaviour {
 		healthStyle.fontStyle = FontStyle.Bold;
 		GUI.Label(new Rect(selectBox.x, selectBox.y - 7, selectBox.width * healthPercentage, 5), label, healthStyle);
 	}
+
 	public void SetColliders(bool enabled) {
 		Collider[] colliders = GetComponentsInChildren< Collider >();
 		foreach(Collider collider in colliders) collider.enabled = enabled;
@@ -181,13 +184,16 @@ public class WorldObject : MonoBehaviour {
 	public void SetPlayingArea(Rect playingArea) {
 		this.playingArea = playingArea;
 	}
+
 	public Bounds GetSelectionBounds() {
 		return selectionBounds;
 	}
+
 	public virtual bool CanAttack() {
 		//default behaviour needs to be overidden by children
 		return false;
 	}
+
 	protected virtual void BeginAttack(WorldObject target) {
 		this.target = target;
 		if(TargetInRange()) {
@@ -198,6 +204,7 @@ public class WorldObject : MonoBehaviour {
 			attacking = false;
 		}
 	}
+
 	private bool TargetInRange() {
 		Vector3 targetLocation = target.transform.position;
 		Vector3 direction = targetLocation - transform.position;
@@ -206,6 +213,7 @@ public class WorldObject : MonoBehaviour {
 		}
 		return false;
 	}
+
 	private void PerformAttack() {
 		if(!target) {
 			attacking = false;
@@ -214,29 +222,42 @@ public class WorldObject : MonoBehaviour {
 		if(!TargetInFrontOfWeapon()) AimAtTarget();
 		else if(ReadyToFire()) UseWeapon();
 	}
+
 	private bool TargetInFrontOfWeapon() {
 		Vector3 targetLocation = target.transform.position;
 		Vector3 direction = targetLocation - transform.position;
 		if(direction.normalized == transform.forward.normalized) return true;
 		else return false;
 	}
+
 	protected virtual void AimAtTarget() {
 		aiming = true;
 		if(ReadyToFire()) UseWeapon();
 		//this behaviour needs to be specified by a specific object
 	}
+
 	private bool ReadyToFire() {
+		if (target)
+		{
+			if (TargetInRange() == false)
+			{
+				attacking = false;
+			}
+		}
 		if(currentWeaponChargeTime >= weaponRechargeTime) return true;
 		return false;
 	}
+
 	protected virtual void UseWeapon() {
 		currentWeaponChargeTime = 0.0f;
 		//this behaviour needs to be specified by a specific object
 	}
+
 	public virtual void TakeDamage(int damage) {
 		hitPoints -= damage;
 		if(hitPoints<=0) Death();
 	}
+
 	/**
  * A child class should only determine other conditions under which a decision should
  * not be made. This could be 'harvesting' for a harvester, for example. Alternatively,
