@@ -4,19 +4,21 @@ using TD;
 
 public class EfritProjectile : Projectile {
 	
+	public int dmgDay;
+	public int dmgNight;
 	// Ce script contiendrais les différences qu'a ce projectile, étant le projectile de base : il est vide.
 	public override void Update ()
 	{
 		base.Update ();
 
-		if (/*DayAndNightCycle.day == true && DayAndNightCycle.night == false*/ dayNightCycle == true)
+		if (DayAndNightCycle.day == true )
 		{
-			damage = 1;
+			damage = dmgDay;
 		}
 
-		if (/*DayAndNightCycle.day == false && DayAndNightCycle.night == true*/ dayNightCycle == false)
+		if (DayAndNightCycle.day == false)
 		{
-			damage = 10;
+			damage = dmgNight;
 		}
 	}
 	

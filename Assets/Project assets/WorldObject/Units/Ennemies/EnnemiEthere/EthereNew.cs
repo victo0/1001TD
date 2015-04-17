@@ -5,17 +5,17 @@ using TD;
 public class EthereNew : EnnemiUnit 
 {
 	// DAY
-	public int timerRegenPv; // if i >= timerRegenPv pv increments by 1
-	public int i;
+	protected int timerRegenPv; // if i >= timerRegenPv pv increments by 1
+	protected int i;
 
 	// NIGHT
 	public int chanceToAvoid; // chance to avoid an attack
 	public float avoidance; // checks if he avoided the attack
-	public int timerAvoid;
-	public int j;
+	protected int timerAvoid;
+	protected int j;
 
 	// if slowed by the elephant's aura
-	public bool slowed;
+	protected bool slowed;
 
 	
 	// Use this for initialization
@@ -26,7 +26,6 @@ public class EthereNew : EnnemiUnit
 
 		i = 0;	// timer that increments over time
 		timerRegenPv = 10;	// 60 / timerRegenPv == number of HP per second
-		chanceToAvoid = 40;	// %age of chance to avoid an attack
 
 		j = 0;
 		timerAvoid = 30;
