@@ -46,12 +46,36 @@ public class TeachMeSensei : MonoBehaviour {
 		// Creez un enfant de EnnemiUnit
 		// Pour les effets n'impliquant pas les autres unités, placez les dans cette classe.
 
-		// Pour éviter des (très) nombreux bugs que celà peut causer, les actions influant sur les autres unités (du joueur ou de l'ennemi) seront palcées dans Unit.cs
+		// Pour éviter des (très) nombreux bugs que celà peut causer, les actions influant sur les autres unités (du joueur ou de l'ennemi) seront placées dans Unit.cs
 		// Tout comme pour les projectiles, ces effets seront appelés depuis l'ennemi, mais seront écris dans Unit.cs.
 		// Tout comme pour les projectiles, je les ajouterais à ma version de Unit.cs une fois validés.
 
 		// Exemple de bug que l'on évite ici : que se passe-t-il si on applique un effet sur le temps, et que le code se trouvait dans un ennemis qu'on as tué (et donc suprimé de la scène) ?
 
 		}
+
+	public void ListeDeStats () { //Pensez à régler les stats "non utilisées" à 0, afin d'éviter les bugs.
+		//POUR TOUS LES OBJETS DU JEU :
+			// "objectName" (String)       : nom de l'objet affiché par le jeu.
+			// "cost" (int)                : prix pour créer l'unité (utilisé uniquement pour nos unités).
+			// "moneyOnDeath" (int)        : argent gagné lors de la mort (utilisé uniquement pour les ennemis).
+			// "hitPoints" (int)           : pv actuels de l'unité.
+			// "maxHitPoints" (int)        : pv maximums de l'unité.
+			// "control" (bool)            : définis si l'unité est (ou non) controlée par le joueur.
+			// "weaponfRange" (float)      : portée d'attaque
+			// "weaponRechargeTime" (float): temps de recharge (temps entre deux tirs).
+			// "weaponAimSpeed" (float)    : vitesse de rotation des unités (normalement, pas besoin de le modifier).
+			// "detectionRange" (float)    : portée de detection de l'unité (normalement, est égale à la portée d'attaque)
+
+		//POUR TOUTES LES UNITES (ALLIEES ET ENNEMIES) :
+			// "dayNightCycle" (bool)      : récupère si il fait jour ou non.
+			// "level"                     : niveau de l'unité (sera utilisé si on conserve les upgrades pour nos unités).
+
+
+
+
+
+
+	}
 
 }
