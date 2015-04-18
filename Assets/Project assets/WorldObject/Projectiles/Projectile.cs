@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour {
 	private float timer;
 
 	private float range = 1;
-	private WorldObject target;
+	protected WorldObject target;
 
 	private int rotationSpeed = 20;
 	protected Quaternion followRotation;
