@@ -92,9 +92,9 @@ public class Tower : Building {
 			break;
 
 			case 7 :
-			nextGarnison.x = towerPosition.x + 1;
+			nextGarnison.x = towerPosition.x - 1;
 			nextGarnison.y = towerPosition.y + 4 + (2*vary1);
-			nextGarnison.z = towerPosition.z - 1;
+			nextGarnison.z = towerPosition.z + 1;
 			AddPopulation ();
 			break;
 

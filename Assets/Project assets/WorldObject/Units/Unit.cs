@@ -35,7 +35,7 @@ public class Unit : WorldObject {
 		if (control)
 		{
 			actualTower =(Tower)GameObject.FindWithTag("Basement").GetComponent(typeof(Tower));
-			//actualTower
+			actualTower.RefreshList();
 			EnterTower (actualTower);
 		}
 	}
@@ -114,8 +114,9 @@ public class Unit : WorldObject {
 	}
 	public void EnterTower (Tower tower) { //code générant le changement de tour.
 		thisInArray = actualTower.garnisonList.IndexOf (this);
+		if (thisInArray == -1) { thisInArray = 0;}
 		nextGarnison = tower.NextPositionMath (this, thisInArray);
-		Debug.Log ("test2 " + actualTower.garnisonList);
+		Debug.Log ("test2 " + nextGarnison + " " + thisInArray);
 		if (nextGarnison != invalidPosition) {
 			actualTower.RemovePopulation();
 			actualTower.RemoveFromArray (this);
