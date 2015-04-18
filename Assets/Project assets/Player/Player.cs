@@ -19,6 +19,7 @@ public class Player : MonoBehaviour {
 	private Building tempBuilding;
 	private Building tempCreator;
 	private bool findingPlacement = false;
+	public int focus;
 
 	// Use this for initialization
 	void Start () { //Génère le HUD pour le joueur.

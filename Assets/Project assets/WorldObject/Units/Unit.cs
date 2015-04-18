@@ -32,6 +32,12 @@ public class Unit : WorldObject {
 		base.Start();
 		actions = new string[] { "EnterTower", "QuitTower", "Upgrade", "Sell" }; // On liste ici les actions qui apparaitrons dans la barre d'actions.
 		switching = false;
+		if (control)
+		{
+			actualTower =(Tower)GameObject.FindWithTag("Basement").GetComponent(typeof(Tower));
+			//actualTower
+			EnterTower (actualTower);
+		}
 	}
 	
 	protected override void Update () {
@@ -106,10 +112,10 @@ public class Unit : WorldObject {
 	private void StartSell (string UnitName) { //code lancé lorsqu'on clique sur l'icone Sell.
 		
 	}
-	public void EnterTower (Tower tower) { //code générant le cahngement de tour.
+	public void EnterTower (Tower tower) { //code générant le changement de tour.
 		thisInArray = actualTower.garnisonList.IndexOf (this);
-		Debug.Log ("Index = " + thisInArray);
 		nextGarnison = tower.NextPositionMath (this, thisInArray);
+		Debug.Log ("test2 " + actualTower.garnisonList);
 		if (nextGarnison != invalidPosition) {
 			actualTower.RemovePopulation();
 			actualTower.RemoveFromArray (this);

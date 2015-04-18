@@ -81,6 +81,34 @@ namespace TD {
 			}
 			return nearestObject;
 		}
+
+		public static WorldObject FindLowestHpWorldObjectInList(List< WorldObject > objects) { //Détermine quel objet de la liste ci dessus est le plus proche.
+			if(objects == null || objects.Count == 0) return null;
+			WorldObject nextFocus = objects[0];
+			int bestHp = nextFocus.hitPoints;
+			for(int i = 1; i < objects.Count; i++) {
+				int datHp = objects[i].hitPoints;
+				if(datHp < bestHp) {
+					bestHp = datHp;
+					nextFocus = objects[i];
+				}
+			}
+			return nextFocus;
+		}
+
+		public static WorldObject FindHighestHpWorldObjectInList(List< WorldObject > objects) { //Détermine quel objet de la liste ci dessus est le plus proche.
+			if(objects == null || objects.Count == 0) return null;
+			WorldObject nextFocus = objects[0];
+			int bestHp = nextFocus.hitPoints;
+			for(int i = 1; i < objects.Count; i++) {
+				int datHp = objects[i].hitPoints;
+				if(datHp > bestHp) {
+					bestHp = datHp;
+					nextFocus = objects[i];
+				}
+			}
+			return nextFocus;
+		}
 	}
 	
 	
