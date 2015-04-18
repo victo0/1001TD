@@ -60,7 +60,6 @@ public class Spawner : MonoBehaviour
         }
 		if (activeUnitNumber >= waveCount)
 		{
-			Debug.Log ("Next wave in" + waveDelay + "with timer at" + timer);
 			onGoing = false;
 			if(timer >= waveDelay)
 			{
@@ -72,7 +71,6 @@ public class Spawner : MonoBehaviour
 
     public void NextWave()
     {
-		Debug.Log ("Next wave launched");
 		activeUnitNumber = 0;
 		currentWave = wavesList [activeWave];
 		activeUnit = currentWave.ennemis [activeUnitNumber];
