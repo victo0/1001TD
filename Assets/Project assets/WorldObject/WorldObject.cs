@@ -285,6 +285,21 @@ public class WorldObject : MonoBehaviour {
 				if(nearbyObject.GetPlayer() != player) enemyObjects.Add(nearbyObject);
 			}
 			WorldObject closestObject = WorkManager.FindNearestWorldObjectInListToPosition(enemyObjects, currentPosition);
+			switch (player.focus) {
+				case 1 :
+				closestObject = WorkManager.FindNearestWorldObjectInListToPosition(enemyObjects, currentPosition);
+				break;
+				case 2 :
+				closestObject = WorkManager.FindLowestHpWorldObjectInList(enemyObjects);
+				break;
+				case 3 :
+				closestObject = WorkManager.FindHighestHpWorldObjectInList(enemyObjects);
+				break;
+				default :
+				closestObject = WorkManager.FindNearestWorldObjectInListToPosition(enemyObjects, currentPosition);
+				break;
+			}
+
 			if(closestObject) BeginAttack(closestObject);
 		}
 	}
