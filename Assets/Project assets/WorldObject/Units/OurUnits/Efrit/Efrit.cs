@@ -7,6 +7,9 @@ public class Efrit : Unit
 	private Quaternion targetRotation;
 	protected Quaternion aimRotation;
 
+	public float dayRange;
+	public float nightRange;
+
 	protected override void Start () 
 	{
 		base.Start ();
@@ -29,14 +32,14 @@ public class Efrit : Unit
 
 		if (/*DayAndNightCycle.day == true && DayAndNightCycle.night == false*/ dayNightCycle == true) // HIGH RANGE
 		{
-			weaponRange = 750.0f;
-			detectionRange = weaponRange;
+			weaponRange = dayRange;
+			detectionRange = dayRange;
 		}
 
 		if (/*DayAndNightCycle.night == false && DayAndNightCycle.night == true*/ dayNightCycle == false) // LOW RANGE
 		{
-			weaponRange = 125.0f;
-			detectionRange = weaponRange;
+			weaponRange = nightRange;
+			detectionRange = nightRange;
 		}
 	}
 	

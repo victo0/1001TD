@@ -1,17 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 using TD;
+using System.Collections.Generic;
 
 public class Elephant : Unit {
 
 	private Quaternion targetRotation;
 	protected Quaternion aimRotation;
 
+	protected Vector3 positionOfTower;
+	public float areaOfSlow;
+	protected List<WorldObject> slowList;
+
+	public float speedSlow;
+	public float lengthSlow;
+
 	protected override void Start () 
 	{
 		base.Start ();
-		weaponRange = 		125f;
-		detectionRange = 	125f;
 	}
 	
 	protected override void Update () 
@@ -26,6 +32,20 @@ public class Elephant : Unit {
 			if(transform.rotation == aimRotation || transform.rotation == inverseAimRotation) 
 			{
 				aiming = false;
+			}
+
+			if (dayNightCycle == false)
+			{
+				positionOfTower = this.transform.position;
+				slowList = WorkManager.FindNearbyObjects(positionOfTower, areaOfSlow);
+				foreach (WorldObject objet in slowList)
+				{
+					if (objet.tag == "Ennemi")
+					{
+						EnnemiUnit betterObjet = objet.GetComponent<EnnemiUnit> ();
+						betterObjet.SlowThatUnit (lengthSlow, speedSlow);
+					}
+				}
 			}
 		}
 	}
@@ -44,14 +64,18 @@ public class Elephant : Unit {
 	protected override void UseWeapon () 
 	{		//Définis ce qu'il se passe lorsqu'on demande à l'unité d'attaquer.
 		base.UseWeapon();
-		Vector3 spawnPoint = transform.position;
-		spawnPoint.x += (2.1f * transform.forward.x);
-		spawnPoint.y += (2.1F * transform.forward.y);
-		spawnPoint.z += (2.1f * transform.forward.z);
-		GameObject gameObject = (GameObject)Instantiate(ResourceManager.GetWorldObject("SoldierProjectile"), spawnPoint, transform.rotation);
-		Projectile projectile = gameObject.GetComponentInChildren< Projectile >();
-		projectile.SetRange(0.9f * weaponRange);
-		projectile.SetTarget(target);
+
+		if (dayNightCycle == true)
+		{
+			Vector3 spawnPoint = transform.position;
+			spawnPoint.x += (2.1f * transform.forward.x);
+			spawnPoint.y += (2.1F * transform.forward.y);
+			spawnPoint.z += (2.1f * transform.forward.z);
+			GameObject gameObject = (GameObject)Instantiate(ResourceManager.GetWorldObject("ElephantProjectile"), spawnPoint, transform.rotation);
+			Projectile projectile = gameObject.GetComponentInChildren< Projectile >();
+			projectile.SetRange(0.9f * weaponRange);
+			projectile.SetTarget(target);
+		}
 	}
 
 	public void StartMove(Vector3 destination) 

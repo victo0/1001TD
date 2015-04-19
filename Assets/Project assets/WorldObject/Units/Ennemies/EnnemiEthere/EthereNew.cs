@@ -5,13 +5,14 @@ using TD;
 public class EthereNew : EnnemiUnit 
 {
 	// DAY
-	protected int timerRegenPv; // if i >= timerRegenPv pv increments by 1
+	public int timerRegenPv; // if i >= timerRegenPv pv increments by 1
 	protected int i;
+	public int regenHp;
 
 	// NIGHT
 	public int chanceToAvoid; // chance to avoid an attack
-	public float avoidance; // checks if he avoided the attack
-	protected int timerAvoid;
+	protected float avoidance; // checks if he avoided the attack
+	public int timerAvoid; // timer to change avoidance
 	protected int j;
 
 	// if slowed by the elephant's aura
@@ -54,7 +55,7 @@ public class EthereNew : EnnemiUnit
 			i++;
 			if (i >= timerRegenPv)
 			{
-				hitPoints++;
+				hitPoints += regenHp;
 				i = 0;
 			}
 		}
@@ -63,6 +64,8 @@ public class EthereNew : EnnemiUnit
 	// CHANCE TO AVOID
 	public override void TakeDamage(int damage)
 	{
+		avoidance = Random.Range (0.0f, 100.0f);
+
 		if (DayAndNightCycle.day == true)
 		{
 			if (avoidance <= chanceToAvoid)

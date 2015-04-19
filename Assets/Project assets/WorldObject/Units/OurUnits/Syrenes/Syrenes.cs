@@ -52,7 +52,7 @@ public class Syrenes : Unit {
 	}
 
 	//Function du changement jour/nuit
-	//D'apres Keumar, le code peut etre simplifié en utilisant une seule variable booléenne qui agit comme un toggle jour/nuit.
+	//D'apres Keumar, le code peut etre simplifié en utilisant une seule variable booléenne qui agit comme un toggle jour/nuit. C'EST REGLE
 
 	public void DayNightToggle () {
 		if (this.dayNightCycle == true) {
