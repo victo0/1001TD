@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 	public int startMoney, startMoneyLimit,startPower,startPowerLimit;
 	private Dictionary < ResourceType, int> resources, resourceLimits;
 
-	public int construcHeight ;
+	public float construcHeight ;
 
 	public Material notAllowedMaterial, allowedMaterial;
 	private Building tempBuilding;
