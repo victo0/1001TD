@@ -3,7 +3,7 @@ using System.Collections;
 using TD;
 using System.Collections.Generic;
 
-public class ElephantProjectile : Projectile 
+public class CharmeursProjectile : Projectile 
 {
 	protected Vector3 positionHit;
 	public float rangeAOE;
