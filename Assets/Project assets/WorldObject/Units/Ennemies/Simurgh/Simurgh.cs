@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Simurgh : EnnemiUnit 
 {
-	public NavMeshAgent agent;
 	public float basicSpeed; // basic speed of the unit
 	public float slowedSpeed; // speed when fallen == true
 	
@@ -19,13 +18,14 @@ public class Simurgh : EnnemiUnit
 	protected float standUpTimer; // time before the enemy gets up
 	protected int standUpTimerINC; // if reaches standUpTimer --> fallen == false
 
-
 	protected bool fallen;
 
 	// Use this for initialization
 	void Start ()
 	{
-		agent = this.GetComponent<NavMeshAgent>();
+		//agent = this.GetComponent<NavMeshAgent>();
+		monObjetSuivi = GameObject.Find("Castle");
+		SetEnnemiDestination ();
 		fallingTimer = Random.Range (minimumTimeToFall, maximumTimeToFall);
 		standUpTimer = Random.Range (minimumTimeToStandUp, maximumTimeToStandUp);
 	}
@@ -33,13 +33,15 @@ public class Simurgh : EnnemiUnit
 	// Update is called once per frame
 	void Update () 
 	{
+		base.Update ();
 		// THE ENEMY STANDS UP
 		if (fallen == false) fallingTimerINC++;
-		if (fallingTimerINC > fallingTimer)
+		if (fallingTimerINC >= fallingTimer)
 		{
 			fallen = true;
 			fallingTimer = Random.Range (minimumTimeToFall, maximumTimeToFall);
 			fallingTimerINC = 0;
+			agent.speed = slowedSpeed;
 		}
 
 		// THE ENEMY "FALLS"
@@ -51,25 +53,5 @@ public class Simurgh : EnnemiUnit
 			standUpTimerINC = 0;
 			agent.speed = basicSpeed;
 		}
-
-		// if FALLEN == TRUE during day
-		if (dayNightCycle == true)
-		{
-			if (fallen == true)
-			{
-				agent.speed = slowedSpeed;
-			}
-		}
-
-		// if FALLEN == FALSE during night
-		/*
-		if (dayNightCycle == true)
-		{
-			if (fallen == true)
-			{
-
-			}
-		}
-		*/
 	}
 }

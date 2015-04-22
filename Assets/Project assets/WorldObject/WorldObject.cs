@@ -9,7 +9,12 @@ public class WorldObject : MonoBehaviour {
 	public Texture2D buildImage;
 	public int cost, moneyOnDeath, hitPoints, maxHitPoints;
 	public bool control;	
-	
+
+	// FOR THE GOULE
+	public static bool isDead;
+	public static Vector3 positionOfDeadEnemy;
+	// END OF THE GOULE
+
 	public float weaponRange = 10.0f, weaponRechargeTime = 1.0f, weaponAimSpeed = 1.0f;
 	public float detectionRange = 10.0f;
 	private float currentWeaponChargeTime;
@@ -51,7 +56,8 @@ public class WorldObject : MonoBehaviour {
 		if(attacking && !aiming) PerformAttack();
 		if(ShouldMakeDecision()) DecideWhatToDo();
 		CalculateBounds();
-		if (target == null) {
+		if (target == null) 
+		{
 			attacking = false;
 		}
 	}
@@ -289,7 +295,14 @@ public class WorldObject : MonoBehaviour {
 		}
 	}
 	
-	public void Death () {
+	public void Death ()
+	{
+		// FOR THE GOULE
+		isDead = true;
+		positionOfDeadEnemy = this.transform.position;
+		// END OF GOULE
+		
+		// ELSE
 		controlledPlayer =(Player)GameObject.FindWithTag("Player").GetComponent(typeof(Player));
 		controlledPlayer.AddResource (ResourceType.Money, moneyOnDeath);
 		Destroy (gameObject);

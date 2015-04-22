@@ -6,32 +6,19 @@ public class EthereNew : EnnemiUnit
 {
 	// DAY
 	public int timerRegenPv; // if i >= timerRegenPv pv increments by 1
-	protected int i;
 	public int regenHp;
+	protected int i;
 
 	// NIGHT
 	public int chanceToAvoid; // chance to avoid an attack
 	protected float avoidance; // checks if he avoided the attack
-	public int timerAvoid; // timer to change avoidance
 	protected int j;
 
-	// if slowed by the elephant's aura
-	protected bool slowed;
-
-	
 	// Use this for initialization
 	void Start () 
 	{
 		monObjetSuivi = GameObject.Find("Castle");
 		SetEnnemiDestination ();
-
-		i = 0;	// timer that increments over time
-		timerRegenPv = 10;	// 60 / timerRegenPv == number of HP per second
-
-		j = 0;
-		timerAvoid = 30;
-
-		slowed = false;
 	}
 	
 	// Update is called once per frame
@@ -39,18 +26,8 @@ public class EthereNew : EnnemiUnit
 	{
 		base.Update ();
 
-		if (DayAndNightCycle.day == true)
-		{
-			j++;
-			if (j >= timerAvoid)
-			{
-				avoidance = Random.Range(0.0f, 100.0f);
-				j = 0;
-			}
-		}
-
 		// HP REGEN
-		if (DayAndNightCycle.night == true && hitPoints < maxHitPoints)
+		if (dayNightCycle == true && hitPoints < maxHitPoints)
 		{
 			i++;
 			if (i >= timerRegenPv)
@@ -65,11 +42,11 @@ public class EthereNew : EnnemiUnit
 	public override void TakeDamage(int damage)
 	{
 		avoidance = Random.Range (0.0f, 100.0f);
-
-		if (DayAndNightCycle.day == true)
+		if (dayNightCycle == false)
 		{
 			if (avoidance <= chanceToAvoid)
 			{
+				Debug.Log("J'esquive, au calme.");
 				damage = 0;
 			}
 			

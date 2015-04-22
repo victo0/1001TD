@@ -37,7 +37,7 @@ public class EnnemiUnit : Unit {
 		{
 			this.agent.speed = actualMovementSpeed;
 			timerSlow += Time.deltaTime;
-			Debug.Log ("i'm slowed " + actualMovementSpeed); 
+			Debug.Log ("I'm slowed " + actualMovementSpeed); 
 		}
 		else
 		{
