@@ -2,7 +2,7 @@
 using System.Collections;
 using TD;
 
-public class Syrenes : Unit {
+public class Sirene : Unit {
 	
 	
 	private Quaternion targetRotation;

@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_5_0_0;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -46,17 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Pack asset\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
-     <Compile Include="Assets\Pack asset\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
-     <Compile Include="Assets\Pack asset\Sky FX Pack\Scripts\LookAtCameraBehaviour.cs" />
-     <Compile Include="Assets\Pack asset\Sky FX Pack\Scripts\RayBehavior.cs" />
-     <Compile Include="Assets\Pack asset\Sky FX Pack\Scripts\RotateBehaviour.cs" />
-     <Compile Include="Assets\Pack asset\Sky FX Pack\Scripts\ScrollBehaviour.cs" />
+     <Compile Include="Assets\ChangeScene.cs" />
+     <Compile Include="Assets\Prefab Scène\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
+     <Compile Include="Assets\Prefab Scène\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
+     <Compile Include="Assets\Prefab Scène\Sky FX Pack\Scripts\LookAtCameraBehaviour.cs" />
+     <Compile Include="Assets\Prefab Scène\Sky FX Pack\Scripts\RayBehavior.cs" />
+     <Compile Include="Assets\Prefab Scène\Sky FX Pack\Scripts\RotateBehaviour.cs" />
+     <Compile Include="Assets\Prefab Scène\Sky FX Pack\Scripts\ScrollBehaviour.cs" />
      <Compile Include="Assets\Project assets\999_Extern\DayAndNightCycle.cs" />
      <Compile Include="Assets\Project assets\999_Extern\EnemyDeath.cs" />
      <Compile Include="Assets\Project assets\999_Extern\Ethere.cs" />
      <Compile Include="Assets\Project assets\999_Extern\Follow.cs" />
-     <Compile Include="Assets\Project assets\999_Extern\Goule.cs" />
      <Compile Include="Assets\Project assets\999_Extern\NewGameButton.cs" />
      <Compile Include="Assets\Project assets\999_Extern\QuitGame.cs" />
      <Compile Include="Assets\Project assets\999_Extern\SpawnerScript.cs" />
@@ -75,6 +75,7 @@
      <Compile Include="Assets\Project assets\WorldObject\Building\Buildings.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Building\Castle\Castle.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Building\Tower\Tower.cs" />
+     <Compile Include="Assets\Project assets\WorldObject\Projectiles\CharmeursProjectile\CharmeursProjectile.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Projectiles\EfritProjectile\EfritProjectile.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Projectiles\ElephantProjectile\ElephantProjectile.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Projectiles\Projectile.cs" />
@@ -83,15 +84,17 @@
      <Compile Include="Assets\Project assets\WorldObject\Units\Ennemies\EnnemiDestination.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\Ennemies\EnnemiEthere\EthereNew.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\Ennemies\EnnemiUnit.cs" />
+     <Compile Include="Assets\Project assets\WorldObject\Units\Ennemies\Goule\Goule.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\Ennemies\Simurgh\Simurgh.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\Ennemies\Spawner\EnemySpawn.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\Ennemies\Spawner\Spawner.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\Ennemies\TestSoldier\TestSoldier.cs" />
+     <Compile Include="Assets\Project assets\WorldObject\Units\OurUnits\Charmeurs\Charmeurs.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\OurUnits\Efrit\Efrit.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\OurUnits\Elephants\Elephant.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\OurUnits\ProphYereus\ProphYereus.cs" />
+     <Compile Include="Assets\Project assets\WorldObject\Units\OurUnits\Sirene\Sirene.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\OurUnits\Soldier\Soldier.cs" />
-     <Compile Include="Assets\Project assets\WorldObject\Units\OurUnits\Syrenes\Syrenes.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\Unit.cs" />
      <Compile Include="Assets\Project assets\WorldObject\Units\Units.cs" />
      <Compile Include="Assets\Project assets\WorldObject\WorldObject.cs" />
@@ -101,7 +104,7 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
-     <None Include="Assets\Pack asset\Palm Trees\Shaders\WavingDoublePassNoCullBackface.shader" />
+     <None Include="Assets\Prefab Scène\Palm Trees\Shaders\WavingDoublePassNoCullBackface.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularSmooth.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
@@ -116,13 +119,16 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
-     <None Include="Assets\Pack asset\Palm Trees\Shaders\WavingDoublePassCullBackface.shader" />
+     <None Include="Assets\Prefab Scène\Palm Trees\Shaders\WavingDoublePassCullBackface.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/sig3gd/Desktop/1001TD/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Metal Gear ZEKE/Desktop/1001TD/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
