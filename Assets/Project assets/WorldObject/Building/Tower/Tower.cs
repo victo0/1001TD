@@ -23,6 +23,7 @@ public class Tower : Building {
 	// Use this for initialization
 	protected override void Start () {
 		base.Start();
+		actions = new string[] { "Soldier", "Soldier", "Soldier" };
 	}
 	
 	// Update is called once per frame
@@ -129,6 +130,14 @@ public class Tower : Building {
 			unit.transform.position = RefreshNextGarnison;
 		}
 
+	}
+	public override void PerformAction(string actionToPerform) { //Determine quelle commande(s) lancer quand on clique sur les boutons d'actions.
+		base.PerformAction(actionToPerform);
+		if (actionToPerform == "Tower") {
+			
+		} else {
+			CreateUnit (actionToPerform);
+		}
 	}
 
 

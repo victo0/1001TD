@@ -34,8 +34,6 @@ public class Unit : WorldObject {
 		switching = false;
 		if (control)
 		{
-			Debug.Log ("test");
-			actualTower =(Tower)GameObject.FindWithTag("Basement").GetComponent(typeof(Tower));
 			actualTower.RefreshList();
 			EnterTower (actualTower);
 		}

@@ -12,16 +12,20 @@ public class Building : WorldObject {
 
 	private bool needsBuilding = false;
 
+	private Tower innerTower;
+
 	protected override void Awake() {
 		base.Awake();
 		buildQueue = new Queue<string>();
 		float spawnX = selectionBounds.center.x + transform.forward.x * selectionBounds.extents.x + transform.forward.x * 10;
 		float spawnZ = selectionBounds.center.z + transform.forward.z + selectionBounds.extents.z + transform.forward.z * 10;
 		spawnPoint = new Vector3(spawnX, 0.0f, spawnZ); 
+		innerTower = (Tower)this.GetComponent <Tower> ();
 	}
 	
 	protected override void Start () {
 		base.Start();
+
 	}
 	
 	protected override void Update () {
@@ -40,7 +44,7 @@ public class Building : WorldObject {
 		if(buildQueue.Count > 0) {
 			currentBuildProgress += Time.deltaTime * ResourceManager.BuildSpeed;
 			if(currentBuildProgress > maxBuildProgress) {
-				if(player) player.AddUnit(buildQueue.Dequeue(), spawnPoint, transform.rotation);
+				if(player) player.AddUnit(buildQueue.Dequeue(), spawnPoint, transform.rotation, innerTower);
 				currentBuildProgress = 0.0f;
 			}
 		}

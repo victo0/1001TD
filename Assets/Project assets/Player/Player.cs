@@ -68,9 +68,15 @@ public class Player : MonoBehaviour {
 	public void IncrementResourceLimit(ResourceType type, int amount) { //Commande utilisée pour modifier la limitte maximum des ressources..
 		resourceLimits[type] += amount;
 	}
-	public void AddUnit(string unitName, Vector3 spawnPoint, Quaternion rotation) { //commande utilisée pour faire spawn une unité.
+	public void AddUnit(string unitName, Vector3 spawnPoint, Quaternion rotation, Tower nextTower) { //commande utilisée pour faire spawn une unité.
 		Units units = GetComponentInChildren< Units >();
 		GameObject newUnit = (GameObject)Instantiate(ResourceManager.GetUnit(unitName), spawnPoint, rotation);
+		Unit newUnitX = (Unit)newUnit.GetComponent <Unit> ();
+		if (newUnitX.control)
+		{
+			Debug.Log("test");
+			newUnitX.actualTower = nextTower;
+		}
 		newUnit.transform.parent = units.transform;
 	}
 	public void CreateBuilding(string buildingName, Vector3 buildPoint, Building creator, Rect playingArea) { //commande utilisée pour créer un batiment.

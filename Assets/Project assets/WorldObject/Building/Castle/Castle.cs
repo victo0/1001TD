@@ -13,7 +13,7 @@ public class Castle : Building {
 	// Use this for initialization
 	protected override void Start () {
 		base.Start();
-		actions = new string[] { "Tower", "Blank", "Blank", "Blank", "Soldier", "Soldier", "Soldier" }; //liste des actions qui vont apparaitre lorsque l'on selectionne le chateau.
+		actions = new string[] { "Tower" }; //liste des actions qui vont apparaitre lorsque l'on selectionne le chateau.
 
 		//Il y a ici 3 "Soldier" uniquement pour tester que l'on peut avoir plusieurs unités différentes.
 		//si vous avez besoin de placer des actions (je me chargerais d'integrer les nouvelles unités au chateau), utilisez "Blank" pour avoir un espace vide.
@@ -36,8 +36,6 @@ public class Castle : Building {
 		base.PerformAction(actionToPerform);
 		if (actionToPerform == "Tower") {
 			CreateBuilding(actionToPerform);
-		} else {
-			CreateUnit (actionToPerform);
 		}
 	}
 	public override void SetBuilding (Building project) { //Définis le batiment comme placé (mais pas encore construit)
