@@ -16,29 +16,35 @@ public class Goule : EnnemiUnit
 		monObjetSuivi = GameObject.Find("Castle");
 		SetEnnemiDestination ();
 	}
-	
 
 	void Update () 
 	{
 		base.Update();
 		//if (dayNightCycle == true) // if it's day time
 		//{
-			if (isDead == true) // if an enemy dies
+			if (isDead == true && isResurrecting == false) // if an enemy dies
 			{
+				isResurrecting = true;
 				resurrectionValue = Random.Range(0, 100); // check if it resurrects
+				Debug.Log ("Resurrection value: " + resurrectionValue);
 
 				if (resurrectionValue < chanceToResurrect) // if yes, check distance
 				{
 					distance = Vector3.Distance (this.transform.position, positionOfDeadEnemy); // get distance between goule and dying enemy
 					Debug.Log ("Distance: " + distance);
-					Debug.Log ("isDead: " + isDead);
 
-					if (distance < resurrectionRange && isResurrecting == false) // if the goule has the range
+					if (distance < resurrectionRange && isResurrecting == true) // if the goule has the range
 					{
 						isResurrecting = true;
 						GouleResurrection(); // RESURRECTION
 					}
 				}
+			}
+
+			else
+			{
+				isDead = false;
+				isResurrecting = false;
 			}
 		//}
 	}
@@ -47,7 +53,6 @@ public class Goule : EnnemiUnit
 	{
 		Debug.Log ("HOLY MADA RESURRECTION");
 		isDead = false;
-		isResurrecting = true;
 		Instantiate(enemyToSpawn, positionOfDeadEnemy, transform.rotation);
 		Debug.Log ("IS DEAD 2: " + isDead);
 		isResurrecting = false;
